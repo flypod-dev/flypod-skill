@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "flypod",
+  "version": "0.2.0",
+  "description": "Deploy a folder of built static files to a live public URL that a human can open — no account, no config, no build pipeline.",
+  "author": {
+    "name": "flypod",
+    "url": "https://flypod.dev"
+  },
+  "homepage": "https://flypod.dev",
+  "repository": "https://github.com/flypod-dev/flypod-skill",
+  "license": "MIT",
+  "keywords": [
+    "deploy",
+    "hosting",
+    "static-site",
+    "preview",
+    "share",
+    "public-url",
+    "handoff",
+    "demo"
+  ]
+}
