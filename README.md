@@ -1,6 +1,7 @@
 # flypod-skill
 
-Agent-skill **packaging** for [flypod](https://flypod.dev).
+Agent-skill **packaging** for [flypod](https://flypod.dev) — teach a coding
+agent to turn a folder into a live, public URL.
 
 This repository contains the agent-skill packaging for **flypod**, a hosted
 service at [flypod.dev](https://flypod.dev). The files here are instructions that
@@ -15,8 +16,9 @@ at [flypod.dev](https://flypod.dev), not in this repository's issues.
 npx skills add flypod-dev/flypod-skill
 ```
 
-That works for [76+ coding agents](https://github.com/vercel-labs/skills). Target
-specific ones with `-a`, or install for every project on the machine with `-g`:
+That covers the agents the [skills CLI](https://github.com/vercel-labs/skills)
+supports. Target specific ones with `-a`, or install for every project on the
+machine with `-g`:
 
 ```sh
 npx skills add flypod-dev/flypod-skill -a claude-code -a codex -a cursor
@@ -41,21 +43,28 @@ npx flypod ./dist --json
 # → { "ok": true, "url": "https://ab12cd34.flypod.dev", ... }
 ```
 
-No account, no login, no config, no build pipeline. Deploys are temporary and
-expire in 14 days; run `flypod login` and they become yours, with no expiry.
-`flypod update` ships a new version to the same URL.
+No account, no login, no config, no build pipeline. A deploy made without an
+account is temporary and expires in 14 days; `flypod login` turns every site
+that machine deployed into yours, with no expiry. `flypod update` ships a new
+version to the same URL, so a link you already handed over keeps working.
 
 The skill uses progressive disclosure: a short entry file the agent always
 loads, plus reference documents it opens only when the task calls for them.
 Between them they cover the deploy loop, shipping updates without changing the
 URL, publishing Markdown as a rendered site, collecting comments on a preview,
-and troubleshooting a deploy that succeeded but looks wrong.
+and reading the `warnings` array on a deploy that succeeded but looks wrong.
+
+The boundary is in the skill too, deliberately: flypod serves static files. It
+runs no server code, no API routes, and no server-side rendering at request
+time. An agent that reaches for flypod on an app that needs a server produces a
+broken deploy, so the skill is written to say so instead.
 
 ## Contents
 
 ```
 plugin.json                 Agent Plugins 1.0.0 manifest
 .claude-plugin/plugin.json  Claude Code plugin manifest
+gemini-extension.json       Gemini CLI extension manifest
 skills/flypod/
   SKILL.md                  the entry file — always loaded
   reference/
@@ -71,9 +80,9 @@ CHANGELOG.md                version history
 ## These files are generated
 
 `skills/flypod/` is generated from the flypod CLI's own skill source, so the
-packaged plugin and `npx flypod install skill` can never say different things.
-Edit the source in the flypod repository, not the copies here; a test fails the
-build if the two drift.
+packaged plugin and `npx flypod install skill` can never say different things to
+two different agents. Edit the source in the flypod repository, not the copies
+here; a test fails the build if the two drift.
 
 ## Scope of the license
 
@@ -85,6 +94,7 @@ governed by their own terms.
 ## Links
 
 - Product: [flypod.dev](https://flypod.dev)
+- What flypod can and cannot do: [flypod.dev/limits](https://flypod.dev/limits)
 - Documentation: [docs.flypod.dev](https://docs.flypod.dev)
 - CLI on npm: [`flypod`](https://www.npmjs.com/package/flypod)
 

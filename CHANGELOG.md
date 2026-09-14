@@ -1,15 +1,15 @@
 # Changelog
 
 All notable changes to the flypod skill packaging are recorded here. The version
-here, `plugin.json`, `.claude-plugin/plugin.json`, and the git tag must always
-match — version drift is a known reviewer complaint across plugin directories.
+here, `plugin.json`, `.claude-plugin/plugin.json`, `gemini-extension.json`, and
+the git tag must always match — version drift is a known reviewer complaint
+across plugin directories.
 
 ## 0.2.0
 
-- `skills/flypod/` is now **generated** from the flypod CLI's own skill source
-  (`bun scripts/build-skill-package.ts` in the flypod repo), and a test fails
-  the build if the two drift. The previous release was a hand-copied snapshot
-  and had already gone stale against the CLI.
+- `skills/flypod/` is now **generated** from the flypod CLI's own skill source,
+  and a test fails the build if the two drift. The previous release was a
+  hand-copied snapshot and had already gone stale against the CLI.
 - Progressive disclosure: a shorter `SKILL.md` plus `reference/` docs the agent
   opens only when the task needs them.
 - New reference material the skill never covered — publishing Markdown as a
@@ -18,6 +18,8 @@ match — version drift is a known reviewer complaint across plugin directories.
 - Ownership rewritten as **temporary → yours** via `flypod login`, replacing the
   old "anonymous vs. signed in" framing. The skill no longer tells agents to
   save a `manage_token`; the CLI stores it for them.
+- Added `gemini-extension.json` at the repository root, so the Gemini CLI
+  gallery can discover this repository without a separate release archive.
 
 ## 0.1.0
 
