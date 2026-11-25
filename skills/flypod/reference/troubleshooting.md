@@ -110,6 +110,10 @@ Each warning has a `code` and a `fix_recipe` naming the change to make.
   instruction file in the project names flypod. Optional: ask the person
   whether to run `npx flypod install skill --yes` so the next session here
   starts with flypod. It adds files to their project, so ask first.
+- `link-expiring`: this update went to a temporary site in its last three
+  days, and updates do not extend it. The deploy worked; do not redo it. Tell
+  the person the date the link stops working, and that `flypod login` (free)
+  keeps it: run `flypod login --json` and hand them the URL if they want it.
 
 `healed` lists what flypod fixed on your behalf. `spa-fallback` there means it
 recognised a single-page app, so unknown paths serve `index.html` and
