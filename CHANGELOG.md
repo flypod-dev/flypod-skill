@@ -5,6 +5,11 @@ here, `plugin.json`, `.claude-plugin/plugin.json`, `gemini-extension.json`, and
 the git tag must always match — version drift is a known reviewer complaint
 across plugin directories.
 
+## 0.3.1
+
+- Listing metadata for the Claude directory: display name, keywords, and the
+  privacy policy, terms and documentation links.
+
 ## 0.3.0
 
 - Installable as a Claude Code plugin from this repository:

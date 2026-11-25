@@ -1,6 +1,7 @@
 {
   "name": "flypod",
-  "version": "0.3.0",
+  "displayName": "flypod",
+  "version": "0.3.1",
   "description": "Deploy a folder of built static files or Markdown to a live public URL anyone can open. No account, no config, no build pipeline.",
   "author": {
     "name": "flypod",
@@ -8,5 +9,18 @@
   },
   "homepage": "https://flypod.dev",
   "repository": "https://github.com/flypod-dev/flypod-skill",
-  "license": "MIT"
+  "documentationUrl": "https://docs.flypod.dev",
+  "privacyPolicyUrl": "https://flypod.dev/privacy",
+  "termsOfServiceUrl": "https://flypod.dev/terms",
+  "license": "MIT",
+  "keywords": [
+    "deploy",
+    "publish",
+    "share",
+    "static-site",
+    "hosting",
+    "markdown",
+    "preview",
+    "public-url"
+  ]
 }
