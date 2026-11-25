@@ -1,11 +1,3 @@
-Scope: this license covers the skill and manifest files contained in this
-repository — SKILL.md, the reference/ documents, plugin.json,
-.claude-plugin/plugin.json, gemini-extension.json, llms-install.md, and the
-accompanying documentation — and nothing else. It grants no rights in the flypod
-hosted service, its server software, its brand or trademarks, or any software
-distributed through the "flypod" npm package, each of which is governed by its
-own terms. See https://flypod.dev.
-
 MIT License
 
 Copyright (c) 2026 flypod

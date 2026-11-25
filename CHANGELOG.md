@@ -5,6 +5,14 @@ here, `plugin.json`, `.claude-plugin/plugin.json`, `gemini-extension.json`, and
 the git tag must always match — version drift is a known reviewer complaint
 across plugin directories.
 
+## 0.3.4
+
+- `LICENSE` is the plain MIT text, so GitHub and directory checks detect it;
+  what it covers is explained in the README.
+- `SECURITY.md`: how to report a vulnerability.
+- The Gemini CLI extension also connects flypod's remote MCP server
+  (`https://flypod.dev/mcp`, no sign-in).
+
 ## 0.3.3
 
 - Describe a deploy as what it is: a share link, unlisted until it is kept in

@@ -1,6 +1,11 @@
 {
   "name": "flypod",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Deploy a folder of built static files or Markdown to a live share link. No account, no config, no build pipeline; without an account the link is unlisted and expires after 14 days.",
-  "contextFileName": "skills/flypod/SKILL.md"
+  "contextFileName": "skills/flypod/SKILL.md",
+  "mcpServers": {
+    "flypod": {
+      "httpUrl": "https://flypod.dev/mcp"
+    }
+  }
 }
