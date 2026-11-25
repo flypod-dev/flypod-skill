@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "flypod",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Deploy a folder of built static files or Markdown to a live public URL anyone can open. No account, no config, no build pipeline.",
   "author": {
     "name": "flypod",

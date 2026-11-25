@@ -5,6 +5,11 @@ here, `plugin.json`, `.claude-plugin/plugin.json`, `gemini-extension.json`, and
 the git tag must always match — version drift is a known reviewer complaint
 across plugin directories.
 
+## 0.3.2
+
+- README: what a deploy uploads and where, what never uploads, how long
+  sites are kept, and how to turn telemetry off.
+
 ## 0.3.1
 
 - Listing metadata for the Claude directory: display name, keywords, and the

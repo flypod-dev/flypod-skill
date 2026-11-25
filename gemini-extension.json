@@ -1,6 +1,6 @@
 {
   "name": "flypod",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Deploy a folder of built static files or Markdown to a live public URL anyone can open. No account, no config, no build pipeline.",
   "contextFileName": "skills/flypod/SKILL.md"
 }

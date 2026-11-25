@@ -98,6 +98,18 @@ repository only**. It grants no rights to the flypod service, its backend, its
 brand, or any software distributed through the `flypod` npm package. Those are
 governed by their own terms.
 
+## Data and privacy
+
+When the agent deploys, the flypod CLI uploads the files in the folder it was
+given to flypod.dev, which serves them publicly at `https://<id>.flypod.page`.
+`.env` files, `.git`, `node_modules` and anything matched by a `.flypodignore`
+are never uploaded. A deploy made without an account expires after 14 days and
+its files are deleted 7 days later; one kept with `flypod login` stays until it
+is deleted. The CLI also sends
+anonymous usage and failure counts, never file names, paths or contents; set
+`DO_NOT_TRACK=1` or `FLYPOD_TELEMETRY=0` to turn that off. Privacy policy:
+[flypod.dev/privacy](https://flypod.dev/privacy).
+
 ## Links
 
 - Product: [flypod.dev](https://flypod.dev)
