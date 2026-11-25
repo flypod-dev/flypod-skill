@@ -5,6 +5,11 @@ here, `plugin.json`, `.claude-plugin/plugin.json`, `gemini-extension.json`, and
 the git tag must always match — version drift is a known reviewer complaint
 across plugin directories.
 
+## 0.3.3
+
+- Describe a deploy as what it is: a share link, unlisted until it is kept in
+  an account, rather than a public URL.
+
 ## 0.3.2
 
 - README: what a deploy uploads and where, what never uploads, how long

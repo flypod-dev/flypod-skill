@@ -1,7 +1,7 @@
 # flypod-skill
 
 Agent-skill **packaging** for [flypod](https://flypod.dev): teach a coding
-agent to turn a folder into a live, public URL.
+agent to turn a folder into a live share link.
 
 This repository contains the agent-skill packaging for **flypod**, a hosted
 service at [flypod.dev](https://flypod.dev). The files here are instructions that
@@ -43,7 +43,7 @@ npx flypod install skill
 
 ## What the skill teaches
 
-One command turns a folder of built static files into a live, public URL:
+One command turns a folder of built static files into a live share link:
 
 ```sh
 npx flypod ./dist --json
@@ -101,8 +101,10 @@ governed by their own terms.
 ## Data and privacy
 
 When the agent deploys, the flypod CLI uploads the files in the folder it was
-given to flypod.dev, which serves them publicly at `https://<id>.flypod.page`.
-`.env` files, `.git`, `node_modules` and anything matched by a `.flypodignore`
+given to flypod.dev, which serves them at `https://<id>.flypod.page`: anyone with
+that link can open it. Without an account the link is unlisted: nothing lists
+it, search engines are told not to index it, and the id is random, so it cannot
+be guessed. `.env` files, `.git`, `node_modules` and anything matched by a `.flypodignore`
 are never uploaded. A deploy made without an account expires after 14 days and
 its files are deleted 7 days later; one kept with `flypod login` stays until it
 is deleted. The CLI also sends

@@ -1,12 +1,14 @@
 ---
 name: flypod
-description: 'Deploy a folder of static files or Markdown to a live, public URL anyone can open: no account, no config. Use it when the user asks to deploy, publish, or share something built; when a build has just finished and someone else needs to look at it; when a report, research write-up, or set of Markdown notes should become a browsable site instead of a file; or when a screenshot or a local dev server will not do because the recipient must open it themselves. Static output only: flypod serves files, and does not run a server or build them.'
+description: 'Deploy a folder of static files or Markdown to a live share link anyone with it can open: no account, no config. Use it when the user asks to deploy, publish, or share something built; when a build has just finished and someone else needs to look at it; when a report, research write-up, or set of Markdown notes should become a browsable site instead of a file; or when a screenshot or a local dev server will not do because the recipient must open it themselves. Static output only: flypod serves files, and does not run a server or build them.'
 ---
 
 # Deploy with flypod
 
-flypod turns a folder into a live, public URL with one command. You bring the
-files; flypod serves them.
+flypod turns a folder into a live share link with one command. You bring the
+files; flypod serves them. Anyone with the link can open it; without an account
+the link is unlisted (search engines are told not to index it) and expires after
+14 days.
 
 ## Deploy
 
