@@ -3,7 +3,7 @@
 You are an AI agent installing the flypod skill. Do this:
 
 1. Copy the whole `skills/flypod/` directory from this repository into the
-   user's agent skills directory — `SKILL.md` **and** the `reference/` files
+   user's agent skills directory: `SKILL.md` **and** the `reference/` files
    next to it. The reference docs are loaded on demand and `SKILL.md` points at
    them by relative path, so copying the entry file alone leaves those pointers
    dangling.
@@ -15,7 +15,7 @@ You are an AI agent installing the flypod skill. Do this:
    | `.agents/skills/flypod/` | Codex, Cursor, Gemini CLI, Copilot (project) |
    | `~/.agents/skills/flypod/` | the same, user-level |
 
-   Keep the YAML frontmatter intact — the `description` field is what you match
+   Keep the YAML frontmatter intact: the `description` field is what you match
    against when deciding whether the skill applies to a turn.
 2. There is nothing to build, no dependency to install, and no API key to set.
    flypod requires no account.

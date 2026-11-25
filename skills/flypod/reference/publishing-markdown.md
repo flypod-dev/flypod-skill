@@ -1,7 +1,7 @@
 # Publishing Markdown with flypod
 
 flypod renders Markdown into a styled, browsable site. You do not need a static
-site generator, a theme, or a build step — deploy the `.md` files themselves.
+site generator, a theme, or a build step. Deploy the `.md` files themselves.
 
 This is the fastest path from "I wrote a report" to "here is a link."
 
@@ -42,7 +42,7 @@ negotiation on the *same* URL. A browser gets the styled HTML; a client that
 asks for Markdown gets the source:
 
 ```sh
-curl -H 'Accept: text/markdown' https://ab12cd34.flypod.dev/guide.html
+curl -H 'Accept: text/markdown' https://a3f1c2d4e5b60789.flypod.page/guide.html
 ```
 
 Known agent and crawler user-agents also get Markdown when they express no media

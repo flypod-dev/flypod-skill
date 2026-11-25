@@ -1,9 +1,9 @@
-# Comments — feedback on a deployed site
+# Comments: feedback on a deployed site
 
 flypod can attach a commenting layer to a site, so a reviewer opens the URL and
 leaves comments anchored to the page. You can then read those comments back as
 JSON and act on them. That closes the loop: ship a preview, collect feedback,
-fix, re-ship — without leaving the terminal.
+fix, re-ship, without leaving the terminal.
 
 ## Turning comments on
 
@@ -13,6 +13,11 @@ At deploy time:
 npx flypod ./dist --comments --json                     # mode: anonymous
 npx flypod ./dist --comments --mode approved --json
 ```
+
+This needs a signed-in deploy. Without one the site still deploys, and the
+receipt says `"comments_enabled": false, "comments_skipped": "not_signed_in"`.
+Tell the user comments are off, and that `flypod login` then
+`flypod comments enable` turns them on.
 
 On a site that already exists:
 
@@ -26,9 +31,9 @@ flypod comments off --site <site_id>        # disable; existing data is preserve
 
 | Mode | Who can comment |
 | --- | --- |
-| `anonymous` | anyone with the link, no sign-in — best for quick previews |
+| `anonymous` | anyone with the link, no sign-in; best for quick previews |
 | `passcode` | anyone holding the passcode you set with `--passcode` |
-| `approved` | only people you have approved — best for anything semi-public |
+| `approved` | anyone with the link, but each comment stays hidden until the owner approves it; best for anything semi-public |
 
 Default when you pass `--comments` with no mode: `anonymous`.
 
@@ -55,11 +60,14 @@ flypod comments reopen  <site_id> <thread_id>
 
 ## Authorization
 
-Read verbs follow the site's own policy. **Write verbs — `post`, `resolve`,
-`reopen`, and the `enable`/`mode`/`off` verbs — need an account session or an
-agent token.** Run `flypod login`, or set `FLYPOD_TOKEN`. A deploy-only key (one
-starting `fk_`) is rejected up front with exit code 3; it authorizes deploys and
-nothing else. `reference/troubleshooting.md` has the full exit-code table.
+Read verbs follow the site's own policy. **Write verbs (`post`, `resolve`,
+`reopen`, and the `enable`/`mode`/`off` verbs) need an account session**, and
+`enable`/`mode`/`off` only work on a site that account owns. Run `flypod login`,
+or set `FLYPOD_TOKEN` to a session token. With no credential they fail with
+`not_signed_in` (exit 3). A token starting `fk_` is a retired API key that flypod
+no longer accepts for anything: `post`, `resolve` and `reopen` refuse it before
+sending (`unauthorized`, exit 3), and a deploy that carries one fails with
+`token_rejected`. `reference/troubleshooting.md` has the full exit-code table.
 
 ## The review loop
 

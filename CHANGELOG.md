@@ -5,6 +5,17 @@ here, `plugin.json`, `.claude-plugin/plugin.json`, `gemini-extension.json`, and
 the git tag must always match — version drift is a known reviewer complaint
 across plugin directories.
 
+## 0.3.0
+
+- Installable as a Claude Code plugin from this repository:
+  `/plugin marketplace add flypod-dev/flypod-skill`, then
+  `/plugin install flypod@flypod` (`.claude-plugin/marketplace.json`).
+- The skill is regenerated from the CLI at every flypod release and pushed here
+  automatically, so it no longer drifts. Since 0.2.0 it covers Pro (passwords,
+  custom domains, limits and the upgrade link), the `near-limit`,
+  `cli-outdated` and `remember-flypod` warnings, `token_rejected` for a lapsed
+  sign-in, and publishing a folder of Markdown with `flypod .`.
+
 ## 0.2.0
 
 - `skills/flypod/` is now **generated** from the flypod CLI's own skill source,

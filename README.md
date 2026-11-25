@@ -1,6 +1,6 @@
 # flypod-skill
 
-Agent-skill **packaging** for [flypod](https://flypod.dev) — teach a coding
+Agent-skill **packaging** for [flypod](https://flypod.dev): teach a coding
 agent to turn a folder into a live, public URL.
 
 This repository contains the agent-skill packaging for **flypod**, a hosted
@@ -25,7 +25,14 @@ npx skills add flypod-dev/flypod-skill -a claude-code -a codex -a cursor
 npx skills add flypod-dev/flypod-skill -g
 ```
 
-Or let an agent install it for you — see [`llms-install.md`](llms-install.md).
+In Claude Code, install it as a plugin for every project:
+
+```
+/plugin marketplace add flypod-dev/flypod-skill
+/plugin install flypod@flypod
+```
+
+Or let an agent install it for you: see [`llms-install.md`](llms-install.md).
 
 Already using flypod? The CLI writes the same skill itself, into
 `.claude/skills/flypod/` and `.agents/skills/flypod/`:
@@ -40,7 +47,7 @@ One command turns a folder of built static files into a live, public URL:
 
 ```sh
 npx flypod ./dist --json
-# → { "ok": true, "url": "https://ab12cd34.flypod.dev", ... }
+# → { "ok": true, "url": "https://a3f1c2d4e5b60789.flypod.page", ... }
 ```
 
 No account, no login, no config, no build pipeline. A deploy made without an
@@ -66,14 +73,14 @@ plugin.json                 Agent Plugins 1.0.0 manifest
 .claude-plugin/plugin.json  Claude Code plugin manifest
 gemini-extension.json       Gemini CLI extension manifest
 skills/flypod/
-  SKILL.md                  the entry file — always loaded
+  SKILL.md                  the entry file, always loaded
   reference/
     updates-and-versions.md update, versions, rollback, --site
     publishing-markdown.md  deploying .md as a rendered site
     comments.md             review loop on a deployed preview
     troubleshooting.md      exit codes, warnings, CI, env vars
 llms-install.md             agent-executable install instructions
-LICENSE                     MIT — covers the files in this repository only
+LICENSE                     MIT, covering the files in this repository only
 CHANGELOG.md                version history
 ```
 
@@ -102,4 +109,4 @@ governed by their own terms.
 
 Questions about the hosted service, deploy failures, accounts, or billing go to
 [flypod.dev](https://flypod.dev). This repository's issues are for the skill
-files themselves — a wrong command, a stale flag, a broken manifest.
+files themselves: a wrong command, a stale flag, a broken manifest.
