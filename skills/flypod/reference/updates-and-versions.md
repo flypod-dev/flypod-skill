@@ -55,15 +55,16 @@ is a no-op: same hash, same version, no new entry in the history. A redundant
 
 The live version stays as long as the site does. Any other version is deleted
 seven days after it was deployed, so `flypod rollback` can reach back about a
-week; a site also keeps at most 20 versions. `flypod versions` shows what is
-still there.
+week; a site also keeps at most 5 versions (24 on flypod Pro). `flypod
+versions` shows what is still there. Versions share their files, so an update
+stores, and on a big site sends, only what changed.
 
 ## Free plan limits
 
 flypod.dev is for hobby use. Per person (the signed-in account, or the network
 an anonymous deploy comes from): 300 deploys a month (new sites and updates;
 any one site at most 300 updates a month), 250 MB of storage (every site and
-every kept version), 10 deploys a minute, and 30 updates an hour to any one
+every kept version, each distinct file once), 10 deploys a minute, and 30 updates an hour to any one
 site. There is no limit on how many
 sites: notes, Markdown and single pages take a few KB. Each site may serve
 5,000 requests a day, then shows a "back at midnight UTC" page. Months and days
