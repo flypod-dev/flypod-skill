@@ -77,12 +77,16 @@ A spent limit is `quota_exceeded` (exit 1). Do not retry it: tell the human
 which limit (`limit`) and when it resets (`resets_at`). For
 `limit: "storage"` there is no reset date: suggest smaller images or video,
 or deleting sites they no longer need at flypod.dev/account. When the error
-carries `upgrade_url`, also show the human that link: flypod Pro raises the
-limit, they pay on that page themselves (about 30 seconds), and then you run
-the same command again. Never try to pay for them.
+carries `upgrade_url`, also show the human that link: a bigger plan raises the
+limit (`upgrade_plan` says which), they pay on that page themselves (about 30
+seconds), and then you run the same command again. Never try to pay for them.
 
 flypod Pro is $5 a month (or $50 a year): custom domains, password-protected
-sites, 2 GB of storage, 1,000 deploys a month and 60 updates per site an hour. `flypod upgrade --json` returns the
+sites, 2 GB of storage, 1,000 deploys a month and 60 updates per site an hour.
+flypod Studio is $12 a month (or $120 a year): everything in Pro with 25 GB of
+storage, 5,000 deploys a month and 120 updates per site an hour, for people
+shipping many sites; on Pro the link is a page where the person confirms paying
+only the difference. `flypod upgrade --json` (`--studio` for Studio) returns the
 payment link (`url`) to show the human whenever they ask for more room;
 it charges nothing by itself.
 
