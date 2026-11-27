@@ -55,7 +55,8 @@ is a no-op: same hash, same version, no new entry in the history. A redundant
 
 The live version stays as long as the site does. Any other version is deleted
 seven days after it was deployed, so `flypod rollback` can reach back about a
-week; a site also keeps at most 5 versions (24 on flypod Pro). `flypod
+week; a site also keeps at most 5 versions. On flypod Pro a site keeps 24, and
+for 30 days. `flypod
 versions` shows what is still there. Versions share their files, so an update
 stores, and on a big site sends, only what changed.
 
